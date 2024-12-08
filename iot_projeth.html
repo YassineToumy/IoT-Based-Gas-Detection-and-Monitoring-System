@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Detection System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            background-color: #6200ea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .status {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .status span {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .status .safe {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .status .danger {
+            background-color: #f44336;
+            color: white;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gas Detection System</h1>
+    <div class="container">
+        <div class="status">
+            <p>Current Status:</p>
+            <span class="{{ status }}">{{ status_message }}</span>
+        </div>
+        <div>
+            <p>Details:</p>
+            <ul>
+                <li>Gas Level: {{ gas_level }} ppm</li>
+                <li>Threshold: {{ threshold }} ppm</li>
+                <li>Last Updated: {{ last_updated }}</li>
+            </ul>
+        </div>
+    </div>
+    <footer>&copy; 2024 Gas Detection Monitoring System</footer>
+</body>
+</html>
